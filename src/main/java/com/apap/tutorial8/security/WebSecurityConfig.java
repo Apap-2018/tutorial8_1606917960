@@ -21,6 +21,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/css/**").permitAll()
 		.antMatchers("/js/**").permitAll()
 		.antMatchers("/flight/**").hasAnyAuthority("PILOT")
+		.antMatchers("/pilot/**").hasAnyAuthority("ADMIN")
 		.anyRequest().authenticated()
 		.and()
 		.formLogin()
@@ -32,13 +33,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 	}
 	
-//	@Autowired
-//	public void configureGlobal (AuthenticationManagerBuilder auth) throws Exception {
-//		auth.inMemoryAuthentication()
-//			.passwordEncoder(encoder())
-//			.withUser("cokicoki").password(encoder().encode("enaksekali"))
-//			.roles("USER");
-//	}
 	@Autowired
 	private UserDetailsService userDetailsService;
 	

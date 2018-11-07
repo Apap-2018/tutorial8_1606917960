@@ -20,4 +20,10 @@ public class UserRoleController {
 		userService.addUser(user);
 		return "home";
 	}
+	
+//	@RequestMapping(value="/updatePassword", method = RequestMethod.POST)
+//	private String updatePasswordSubmit(@ModelAttribute UserRoleModel user) {
+//		userService.addUser(user);
+//		return "home";
+//	}
 }
