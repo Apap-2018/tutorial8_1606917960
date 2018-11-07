@@ -35,6 +35,9 @@
 							type="text" name="role"/>
 						</div>
 						<div>
+							<p th:text="${status}" style="font-weight:bold;font-size:20px"></p>
+						</div>
+						<div>
 							<button type="submit" class="btn btn-primary">Simpan</button>
 						</div>
 						</form>
@@ -51,22 +54,24 @@
 						Update Password
 					</div>
 					<div class="card-body">
-						<!-- <form th:action="@{/user/addUser}" method="post"> -->
-						<form>
+						<form th:action="@{/user/updatePass}" method="post">
 						<div class="row form-group">
 							<label class="col-sm-4">Password Lama :</label>
 							<input class="col-sm-8 form-control input-sm" 
-							type="text" name="username"/>
+							type="text" name="oldPass"/>
 						</div>
 						<div class="row form-group">
 							<label class="col-sm-4">Password Baru :</label>
 							<input class="col-sm-8 form-control input-sm" 
-							type="password" name="password"/>
+							type="password" name="newPass"/>
 						</div>
 						<div class="row form-group">
 							<label class="col-sm-4">Konfirmasi Password Baru :</label>
 							<input class="col-sm-8 form-control input-sm" 
-							type="text" name="role"/>
+							type="text" name="conPass"/>
+						</div>
+						<div>
+							<p th:text="${message}" style="font-weight:bold;font-size:20px"></p>
 						</div>
 						<div>
 							<button type="submit" class="btn btn-primary">Simpan</button>
